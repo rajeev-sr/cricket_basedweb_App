@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Live Stats/Highlight Ticker -->
+<div class="stats-ticker bg-dark text-warning py-2 px-3 mb-4 rounded shadow-sm">
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+        🏏 Total Players Analyzed: 500+ | Powered by BCCI data
+    </marquee>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-section text-center py-5 mb-5">
+    <div class="hero-content">
+        <h1 class="display-4 mb-3 fw-bold">Predict the Best Cricket XI</h1>
+        <p class="lead mb-4">Using advanced machine learning models and BCCI data</p>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-3">
+                <div class="format-card shadow-lg hover-card border-0">
+                    <div class="card-body">
+                        <img src="{{ url_for('static', filename='images/test-icon.png') }}" alt="Test" class="format-icon mb-3">
+                        <h5 class="card-title mb-3">Test Matches</h5>
+                        <a href="/predict?format=Test" class="btn btn-primary btn-block mt-2">View Predictions</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="format-card shadow-lg hover-card border-0">
+                    <div class="card-body">
+                        <img src="{{ url_for('static', filename='images/odi-icon.png') }}" alt="ODI" class="format-icon mb-3">
+                        <h5 class="card-title mb-3">ODI Matches</h5>
+                        <a href="/predict?format=ODI" class="btn btn-success btn-block mt-2">View Predictions</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="format-card shadow-lg hover-card border-0">
+                    <div class="card-body">
+                        <img src="{{ url_for('static', filename='images/t20-icon.png') }}" alt="T20" class="format-icon mb-3">
+                        <h5 class="card-title mb-3">T20 Matches</h5>
+                        <a href="/predict?format=T20" class="btn btn-warning btn-block mt-2">View Predictions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Why Use This / Features Section -->
+<div class="container mt-5">
+    <div class="row text-center">
+        <div class="col-md-3 mb-4">
+            <h6 class="mt-2 fw-bold">AI-Powered</h6>
+            <p>Advanced machine learning for accurate predictions</p>
+        </div>
+        <div class="col-md-3 mb-4">
+            <h6 class="mt-2 fw-bold">Official Data</h6>
+            <p>Scraped from BCCI for reliability</p>
+        </div>
+        <div class="col-md-3 mb-4">
+            <h6 class="mt-2 fw-bold">All Formats</h6>
+            <p>Test, ODI, and T20 covered</p>
+        </div>
+        <div class="col-md-3 mb-4">
+            <h6 class="mt-2 fw-bold">Actionable Insights</h6>
+            <p>Easy-to-read tables and rankings</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

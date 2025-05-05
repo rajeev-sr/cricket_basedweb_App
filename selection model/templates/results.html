@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="prediction-results">
+    <h2 class="mb-4">Best {{ format }} XI Prediction</h2>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    Top Batters
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Player</th>
+                                    <th>Runs</th>
+                                    <th>Average</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for batter in batters %}
+                                <tr>
+                                    <td>{{ batter.PLAYER }}</td>
+                                    <td>{{ batter.R }}</td>
+                                    <td>{{ batter.AVG }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-danger text-white">
+                    Top Bowlers
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Player</th>
+                                    <th>Wickets</th>
+                                    <th>Economy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for bowler in bowlers %}
+                                <tr>
+                                    <td>{{ bowler.PLAYER }}</td>
+                                    <td>{{ bowler.WKTS }}</td>
+                                    <td>{{ bowler.ECON }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/" class="btn btn-secondary">Back to Home</a>
+    </div>
+</div>
+{% endblock %}
